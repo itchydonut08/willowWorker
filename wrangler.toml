@@ -1,12 +1,11 @@
 name = "willow-forecasts"
 main = "src/worker.js"
 compatibility_date = "2025-08-01"
-workers_dev = true
 
 [triggers]
-# Daily at 13:00 UTC — change this if you prefer
-crons = ["0 13 * * *"]
+crons = ["0 13 * * *"] # run daily at 13:00 UTC
 
 [[kv_namespaces]]
-binding = "willow_forecasts"
-id = "1d363298cbf24016b5cb535c7da48613"
+binding = "FORECASTS"
+id = "<YOUR_NAMESPACE_ID>"
+# preview_id = "<YOUR_PREVIEW_ID>" # optional
