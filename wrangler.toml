@@ -1,4 +1,4 @@
-name = "willow-forecasts"
+name = "willowworker"
 main = "src/worker.js"
 compatibility_date = "2025-08-01"
 
