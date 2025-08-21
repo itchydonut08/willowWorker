@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Willow Forecasts Demo</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,sans-serif;margin:24px}
+    .list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .card{border:1px solid #e5e7eb;border-radius:12px;padding:10px}
+    .muted{color:#6b7280}
+    .badge{font-size:12px;border:1px solid #e5e7eb;border-radius:999px;padding:2px 6px;margin-left:8px}
+  </style>
+</head>
+<body>
+  <h1>Daily Forecasts<span id="date" class="badge">--</span></h1>
+  <div id="list" class="list"></div>
+  <script>
+    async function main(){
+      const r = await fetch('/api/forecasts', { cache: 'no-store' });
+      const { date, items } = await r.json();
+      document.getElementById('date').textContent = date;
+      const list = document.getElementById('list');
+      list.innerHTML = items.map(x => \`
+        <div class="card">
+          <div><b>\${x.title}</b></div>
+          <div class="muted">\${x.source} • \${x.probability}%</div>
+        </div>\`).join('');
+    }
+    main();
+  </script>
+</body>
+</html>

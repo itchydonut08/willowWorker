@@ -1,0 +1,13 @@
+name = "willow-forecasts"
+main = "src/worker.js"
+compatibility_date = "2025-08-01"
+workers_dev = true
+
+[triggers]
+# Daily at 13:00 UTC — change this if you prefer
+crons = ["0 13 * * *"]
+
+[[kv_namespaces]]
+binding = "FORECASTS"
+id = "REPLACE_WITH_KV_ID"
+preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
