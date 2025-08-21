@@ -8,6 +8,5 @@ workers_dev = true
 crons = ["0 13 * * *"]
 
 [[kv_namespaces]]
-binding = "FORECASTS"
-id = "REPLACE_WITH_KV_ID"
-preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+binding = "willow_forecasts"
+id = "1d363298cbf24016b5cb535c7da48613"
